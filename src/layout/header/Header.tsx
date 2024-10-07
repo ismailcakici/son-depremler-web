@@ -12,7 +12,7 @@ const Header: React.FC = () => {
   };
 
   return (
-    <header className="navbar bg-base-100 dark:bg-base-300 rounded-lg top-3 sticky mb-5 z-10">
+    <header className="navbar bg-base-300 rounded-box top-3 sticky mb-5 z-10">
       <div className='flex-1'>
         <Link to='/' className='btn btn-ghost text-xl'>Son Depremler</Link>
       </div>
