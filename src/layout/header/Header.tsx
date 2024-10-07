@@ -1,33 +1,25 @@
-import { useState, useEffect } from 'react';
-import { FiSun, FiMoon } from 'react-icons/fi';
+import React, { useState } from 'react';
+import { FaSun, FaMoon } from 'react-icons/fa';
 
-const Header = () => {
-  const [theme, setTheme] = useState(localStorage.theme || 'light');
-
-  useEffect(() => {
-    if (theme === 'dark') {
-      document.documentElement.classList.add('dark');
-    } else {
-      document.documentElement.classList.remove('dark');
-    }
-    localStorage.setItem('theme', theme);
-  }, [theme]);
+const Header: React.FC = () => {
+  const [theme, setTheme] = useState<'light' | 'dark'>('light');
 
   const toggleTheme = () => {
-    setTheme(theme === 'light' ? 'dark' : 'light');
+    const newTheme = theme === 'light' ? 'dark' : 'light';
+    setTheme(newTheme);
+    document.documentElement.setAttribute('data-theme', newTheme);
   };
 
   return (
-    <header className="flex justify-between items-center p-4 bg-secondary-light dark:bg-secondary-dark shadow-md">
-      <h1 className="text-2xl text-textPrimary-light dark:text-textPrimary-dark">
-        Son Depremler
-      </h1>
-      <button
-        onClick={toggleTheme}
-        className="text-xl text-accent dark:text-darkSecondary p-2 rounded-full"
-      >
-        {theme === 'light' ? <FiMoon className='text-primary-dark'/> : <FiSun className='text-primary-light'/>}
+    <header className="navbar bg-base-100 dark:bg-base-300 rounded-lg top-3 sticky z-10">
+      <div className='flex-1'>
+        <a href='#' className='btn btn-ghost text-xl'>Son Depremler</a>
+      </div>
+      <div className='flex-none'>
+      <button onClick={toggleTheme} className="btn btn-ghost">
+        {theme === 'light' ? <FaMoon className="text-primary" /> : <FaSun className="text-primary" />}
       </button>
+      </div> 
     </header>
   );
 };

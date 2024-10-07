@@ -1,12 +1,14 @@
-import React from 'react';
-import Header from './layout/header/Header';
+// src/App.tsx
 
-function App() {
+import React from 'react';
+import Header from './layout/header/Header'
+
+const App: React.FC = () => {
   return (
-    <div className="font-sans min-h-screen bg-primary-light dark:bg-primary-dark text-accent dark:text-darkSecondary">
-      <Header/>
+    <div className='w-5/6 sm:w-3/4 lg:w-3/5 min-h-screen mx-auto'>
+      <Header />
     </div>
   );
-}
+};
 
 export default App;
