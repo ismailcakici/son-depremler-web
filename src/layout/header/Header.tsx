@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { FaSun, FaMoon } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 
 const Header: React.FC = () => {
   const [theme, setTheme] = useState<'light' | 'dark'>('light');
@@ -11,9 +12,9 @@ const Header: React.FC = () => {
   };
 
   return (
-    <header className="navbar bg-base-100 dark:bg-base-300 rounded-lg top-3 sticky z-10">
+    <header className="navbar bg-base-100 dark:bg-base-300 rounded-lg top-3 sticky mb-5 z-10">
       <div className='flex-1'>
-        <a href='#' className='btn btn-ghost text-xl'>Son Depremler</a>
+        <Link to='/' className='btn btn-ghost text-xl'>Son Depremler</Link>
       </div>
       <div className='flex-none'>
       <button onClick={toggleTheme} className="btn btn-ghost">
