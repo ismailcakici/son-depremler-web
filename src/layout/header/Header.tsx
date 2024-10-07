@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { FaSun, FaMoon } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
+import appIcon from '../../assets/icon/app-ic.png';
 
 const Header: React.FC = () => {
   const [theme, setTheme] = useState<'light' | 'dark'>('light');
@@ -14,7 +15,8 @@ const Header: React.FC = () => {
   return (
     <header className="navbar bg-base-300 rounded-box top-3 sticky mb-5 z-10">
       <div className='flex-1'>
-        <Link to='/' className='btn btn-ghost text-xl'>Son Depremler</Link>
+      
+        <Link to='/' className='btn btn-ghost text-xl'><img className='w-10 h-10' src={appIcon} alt="app-ic" /> Son Depremler</Link>
       </div>
       <div className='flex-none'>
       <button onClick={toggleTheme} className="btn btn-ghost">

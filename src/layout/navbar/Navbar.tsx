@@ -1,5 +1,7 @@
 import React from "react";
-import { FaHome, FaMap, FaCity } from "react-icons/fa";
+import { FaHome, FaMap, FaCity} from "react-icons/fa";
+import { IoLogoGooglePlaystore } from "react-icons/io5";
+
 import { Link } from "react-router-dom";
 
 const Navbar: React.FC = () => {
@@ -18,6 +20,11 @@ const Navbar: React.FC = () => {
             <li>
                 <Link to="/sehirler">
                     <FaCity/>
+                </Link>
+            </li>
+            <li>
+                <Link target="_blank" to="https://play.google.com/store/apps/details?id=com.son.depremler">
+                    <IoLogoGooglePlaystore/>
                 </Link>
             </li>
         </ul>
