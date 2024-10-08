@@ -23,6 +23,7 @@ const CityDetail: React.FC = () => {
         lat={city.coordinates.lat}
         lon={city.coordinates.longitude}
         zoom={10}
+        quakes={[]}
       />
     </div>
   );

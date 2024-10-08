@@ -5,7 +5,7 @@ const fetchQuakes = async (): Promise<Quake[]> => {
     const baseURL = process.env.REACT_APP_API_URL;
     const { endDate, startDate } = getFormattedDates();
     
-    const apiUrl = `${baseURL}?start=${startDate}&end=${endDate}`;
+    const apiUrl = `${baseURL}?start=${startDate}&end=${endDate}&orderby=timedesc`;
     
     try {
         const response = await fetch(apiUrl);

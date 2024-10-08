@@ -49,7 +49,7 @@ const Home: React.FC = () => {
           </table>
         </div>
       ) : (
-        <p>Hiç deprem verisi bulunamadı.</p>
+        <p className="mx-auto font-bold">Hiç deprem verisi bulunamadı.</p>
       )}
     </div>
   );
