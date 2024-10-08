@@ -15,7 +15,7 @@ const Header: React.FC = () => {
   }, [theme]);
 
   return (
-    <header className="navbar bg-base-300 rounded-box shadow-lg top-3 sticky mb-5 z-10">
+    <header className="navbar bg-base-300 rounded-box shadow-lg top-3 sticky mb-5 z-[9999]">
       <div className="flex-1">
         <Link to="/" className="btn btn-ghost text-xl">
           <img className="w-10 h-10" src={appIcon} alt="app-ic" /> Son Depremler
@@ -23,11 +23,7 @@ const Header: React.FC = () => {
       </div>
       <div className="flex-none">
         <button onClick={toggleTheme} className="btn btn-ghost">
-          {theme === "light" ? (
-            <FaMoon className="text-primary" />
-          ) : (
-            <FaSun className="text-primary" />
-          )}
+          {theme === "light" ? <FaMoon /> : <FaSun />}
         </button>
       </div>
     </header>

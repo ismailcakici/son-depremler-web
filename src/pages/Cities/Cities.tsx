@@ -13,7 +13,7 @@ const Cities: React.FC = () => {
   );
 
   const handleCityClick = (city: City) => {
-    navigate(`/sehirler/sehirDetay/${city.id}`, { state: city });
+    navigate(`/sehirler/sehir-detay/${city.id}`, { state: city });
   };
 
   return (
