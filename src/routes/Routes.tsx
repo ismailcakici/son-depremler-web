@@ -1,11 +1,11 @@
-import React from 'react';
-import { Routes, Route } from 'react-router-dom';
-import Home from '../pages/Home/Home';
-import Detail from '../pages/Detail/Detail';
-import NotFound from '../pages/NotFound/NotFound';
-import Map from '../pages/Map/Map';
-import Cities from '../pages/Cities/Cities';
-
+import React from "react";
+import { Routes, Route } from "react-router-dom";
+import Home from "../pages/Home/Home";
+import Detail from "../pages/Detail/Detail";
+import NotFound from "../pages/NotFound/NotFound";
+import Map from "../pages/Map/Map";
+import Cities from "../pages/Cities/Cities";
+import CityDetail from "../pages/CityDetail/CityDetail";
 
 const AppRoutes: React.FC = () => {
   return (
@@ -14,6 +14,7 @@ const AppRoutes: React.FC = () => {
       <Route path="/deprem-detay" element={<Detail />} />
       <Route path="/harita" element={<Map />} />
       <Route path="/sehirler" element={<Cities />} />
+      <Route path="/sehirDetay" element={<CityDetail />} />
       <Route path="/*" element={<NotFound />} />
     </Routes>
   );

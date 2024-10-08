@@ -1,11 +1,9 @@
-import React from 'react';
+import React from "react";
 
 const Map: React.FC = () => {
-    return (
-        <div>
-            Map
-        </div>
-    );
-}
+  return (
+    <div className="rounded-box flex flex-col p-4 w-full min-h-screen bg-base-300"></div>
+  );
+};
 
 export default Map;
