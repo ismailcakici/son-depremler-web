@@ -2,13 +2,19 @@ import React, { useState } from "react";
 import cityList from "../../constants/cities.json";
 import { FaSearch } from "react-icons/fa";
 import { City } from "../../types/City/City";
+import { useNavigate } from "react-router-dom";
 
 const Cities: React.FC = () => {
   const [searchTerm, setSearchTerm] = useState("");
+  const navigate = useNavigate();
 
   const filteredCities: City[] = cityList.filter((city: City) =>
     city.name.toLowerCase().includes(searchTerm.toLowerCase())
   );
+
+  const handleCityClick = (city: City) => {
+    navigate(`/sehirler/sehirDetay/${city.id}`, { state: city });
+  };
 
   return (
     <div className="rounded-box flex flex-col p-4 w-full min-h-screen bg-base-300">
@@ -30,7 +36,11 @@ const Cities: React.FC = () => {
           </thead>
           <tbody>
             {filteredCities.map((city: City) => (
-              <tr className="hover cursor-pointer" key={city.id}>
+              <tr
+                className="hover cursor-pointer"
+                key={city.id}
+                onClick={() => handleCityClick(city)}
+              >
                 <td>{city.name}</td>
               </tr>
             ))}

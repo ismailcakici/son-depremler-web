@@ -14,7 +14,7 @@ const AppRoutes: React.FC = () => {
       <Route path="/deprem-detay" element={<Detail />} />
       <Route path="/harita" element={<Map />} />
       <Route path="/sehirler" element={<Cities />} />
-      <Route path="/sehirDetay" element={<CityDetail />} />
+      <Route path="/sehirler/sehirDetay/:cityId" element={<CityDetail />} />
       <Route path="/*" element={<NotFound />} />
     </Routes>
   );
