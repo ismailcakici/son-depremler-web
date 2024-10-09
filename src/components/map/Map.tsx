@@ -1,9 +1,16 @@
 import React from "react";
 import { MapContainer, TileLayer } from "react-leaflet";
-import { MapProps } from "../../types/Map/MapProps";
 import { Popup, Circle } from "react-leaflet";
 import { LatLngTuple } from "leaflet";
 import "leaflet/dist/leaflet.css";
+import { Quake } from "../../types/Quake/Quake";
+
+interface MapProps {
+  lat: number;
+  lon: number;
+  zoom: number;
+  quakes: Quake[];
+}
 
 const Map: React.FC<MapProps> = ({ lat, lon, zoom, quakes }) => {
   return (
@@ -25,7 +32,7 @@ const Map: React.FC<MapProps> = ({ lat, lon, zoom, quakes }) => {
         ];
         const magnitude = parseFloat(quake.magnitude);
 
-        const radius = magnitude * 20000;
+        const radius = magnitude * 10000;
         const fillOpacity = 0.4;
         const strokeOpacity = 0.2;
 

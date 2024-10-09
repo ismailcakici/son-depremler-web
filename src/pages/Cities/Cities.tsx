@@ -3,6 +3,7 @@ import cityList from "../../constants/cities.json";
 import { FaSearch } from "react-icons/fa";
 import { City } from "../../types/City/City";
 import { useNavigate } from "react-router-dom";
+import CityList from "../../components/cityList/CityList";
 
 const Cities: React.FC = () => {
   const [searchTerm, setSearchTerm] = useState("");
@@ -28,29 +29,10 @@ const Cities: React.FC = () => {
         <FaSearch />
       </label>
       <div className="overflow-x-auto w-full lg:w-3/6 lg:mx-auto">
-        <table className="table table-zebra bg-base-100">
-          <thead>
-            <tr>
-              <th className="pinned">Şehir Adı</th>
-            </tr>
-          </thead>
-          <tbody>
-            {filteredCities.map((city: City) => (
-              <tr
-                className="hover cursor-pointer"
-                key={city.id}
-                onClick={() => handleCityClick(city)}
-              >
-                <td>{city.name}</td>
-              </tr>
-            ))}
-            {filteredCities.length === 0 && (
-              <tr>
-                <td className="text-center">Aradığınız şehir bulunamadı.</td>
-              </tr>
-            )}
-          </tbody>
-        </table>
+        <CityList
+          filteredCities={filteredCities}
+          handleCityClick={handleCityClick}
+        />
       </div>
     </div>
   );
