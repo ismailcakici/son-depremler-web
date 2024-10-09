@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 
 const Navbar: React.FC = () => {
   return (
-    <ul className="fixed left-1/2 transform -translate-x-1/2 -translate-y-1/2 bottom-0 menu menu-horizontal bg-base-300 rounded-box shadow-lg z-10">
+    <ul className="fixed left-1/2 transform -translate-x-1/2 -translate-y-1/2 bottom-0 menu menu-horizontal bg-base-300 rounded-box shadow-lg z-[9999]">
       <li>
         <Link to="/">
           <FaHome />

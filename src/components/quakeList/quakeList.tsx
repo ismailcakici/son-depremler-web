@@ -1,6 +1,7 @@
 import React from "react";
 import { Quake } from "../../types/Quake/Quake";
 import Loading from "../../components/loading/Loading";
+import { useNavigate } from "react-router-dom";
 
 interface QuakeListProps {
   quakes: Quake[];
@@ -8,6 +9,8 @@ interface QuakeListProps {
 }
 
 const QuakeList: React.FC<QuakeListProps> = ({ quakes, loading }) => {
+  const navigate = useNavigate();
+
   if (loading) {
     return <Loading />;
   }
@@ -32,7 +35,13 @@ const QuakeList: React.FC<QuakeListProps> = ({ quakes, loading }) => {
       </thead>
       <tbody>
         {quakes.map((quake) => (
-          <tr key={quake.eventID}>
+          <tr
+            className="cursor-pointer"
+            key={quake.eventID}
+            onClick={() => {
+              navigate(`/deprem-detay/${quake.eventID}`);
+            }}
+          >
             <td>{new Date(quake.date).toLocaleString()}</td>
             <td>{quake.location}</td>
             <td>{quake.magnitude}</td>
