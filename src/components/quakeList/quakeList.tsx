@@ -24,7 +24,7 @@ const QuakeList: React.FC<QuakeListProps> = ({ quakes, loading }) => {
   }
 
   return (
-    <table className="table table-zebra w-full">
+    <table className="table table-xs table-zebra lg:table lg:table-zebra w-full">
       <thead>
         <tr>
           <th>Tarih</th>
