@@ -1,5 +1,5 @@
 ## Son Depremler Web Uygulaması
-Web Uygulaması [Link]()
+Web Uygulaması [Link](https://ismailcakici.github.io/son-depremler-web)
 
   `Özellikler`
   - Son 24 saatte gerçekleşen depremleri görebilirsiniz.
