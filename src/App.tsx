@@ -1,7 +1,7 @@
 import React from "react";
 import Header from "./layout/header/Header";
 import AppRoutes from "./routes/Routes";
-import { BrowserRouter as Router } from "react-router-dom";
+import { HashRouter as Router } from "react-router-dom";
 import Navbar from "./layout/navbar/Navbar";
 import Footer from "./layout/footer/Footer";
 import { QuakeProvider } from "./context/AppLevelContext";
