@@ -2,8 +2,7 @@
 Web Uygulaması [Link]()
 
   `Özellikler`
-  - Son 24 saat, 7 ve 30 gün gibi zaman aralığındaki depremleri görebilirsiniz.
-  - Depremleri büyüklüklerine göre filtreleyebilirsiniz.
+  - Son 24 saatte gerçekleşen depremleri görebilirsiniz.
   - Gerçekleşen depremlerin detaylı bilgilerini görebilirsiniz.
   - Depremleri haritada izleyebilir, bulunduğunuz konuma göre yakınınızdaki gerçekleşen depremleri görebilirsiniz.
   - Şehirlere göre gerçekleşen deprem verilerine ulaşabilirsiniz.
