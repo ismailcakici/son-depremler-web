@@ -18,12 +18,8 @@ const CityDetail: React.FC = () => {
       </div>
     );
   }
-
   const filteredQuakes: Quake[] = quakes.filter((quake) => {
-    if (quake.province && city?.name) {
-      return quake.province.toLowerCase() === city.name.toLowerCase();
-    }
-    return false;
+    return quake.location_properties.epiCenter.cityCode === city?.id;
   });
 
   return (

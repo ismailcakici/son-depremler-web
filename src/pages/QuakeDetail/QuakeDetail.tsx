@@ -31,8 +31,8 @@ const QuakeDetail: React.FC = () => {
           <div className="divider"></div>
           <Map
             zoom={7}
-            lat={Number(quake.latitude)}
-            lon={Number(quake.longitude)}
+            lat={Number(quake.geojson.coordinates[1])}
+            lon={Number(quake.geojson.coordinates[0])}
             quakes={[quake]}
           />
           <table className="table table-zebra w-full">
@@ -42,24 +42,14 @@ const QuakeDetail: React.FC = () => {
                 <th>Şehir</th>
                 <th>Büyüklük</th>
                 <th>Derinlik</th>
-                <th>Tip</th>
-                <th>Ülke</th>
-                <th>İl</th>
-                <th>İlçe</th>
-                <th>Mahalle</th>
               </tr>
             </thead>
             <tbody>
               <tr>
                 <td>{new Date(quake.date).toLocaleString()}</td>
-                <td>{quake.location}</td>
+                <td>{quake.location_properties.epiCenter.name}</td>
                 <td> {quake.magnitude}</td>
                 <td> {quake.depth}km</td>
-                <td>{quake.type}</td>
-                <td>{quake.country}</td>
-                <td>{quake.province}</td>
-                <td>{quake.district}</td>
-                <td>{quake.neighborhood}</td>
               </tr>
             </tbody>
           </table>

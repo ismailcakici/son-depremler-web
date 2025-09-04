@@ -27,10 +27,10 @@ const Map: React.FC<MapProps> = ({ lat, lon, zoom, quakes }) => {
       />
       {quakes.map((quake) => {
         const position: LatLngTuple = [
-          parseFloat(quake.latitude),
-          parseFloat(quake.longitude),
+          quake.geojson.coordinates[1],
+          quake.geojson.coordinates[0],
         ];
-        const magnitude = parseFloat(quake.magnitude);
+        const magnitude = quake.magnitude;
 
         const radius = magnitude * 10000;
         const fillOpacity = 0.4;
@@ -50,15 +50,13 @@ const Map: React.FC<MapProps> = ({ lat, lon, zoom, quakes }) => {
           >
             <Popup>
               <div>
-                <strong>{quake.location}</strong>
+                <strong>{quake.title}</strong>
                 <br />
                 Büyüklük: {quake.magnitude}
                 <br />
                 Derinlik: {quake.depth} km
                 <br />
-                Ülke: {quake.country}
-                <br />
-                İl: {quake.province}
+                İl: {quake.location_properties.epiCenter.name}
                 <br />
                 Tarih: {new Date(quake.date).toLocaleString()}
               </div>

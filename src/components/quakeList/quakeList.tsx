@@ -43,7 +43,7 @@ const QuakeList: React.FC<QuakeListProps> = ({ quakes, loading }) => {
             }}
           >
             <td>{new Date(quake.date).toLocaleString()}</td>
-            <td>{quake.location}</td>
+            <td>{quake.location_properties.epiCenter.name}</td>
             <td>{quake.magnitude}</td>
             <td>{quake.depth}</td>
           </tr>
