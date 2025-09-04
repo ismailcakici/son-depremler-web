@@ -6,6 +6,7 @@ const fetchQuakes = async (): Promise<Quake[]> => {
     const { endDate, startDate } = getFormattedDates();
     
     const apiUrl = `${baseURL}?start=${startDate}&end=${endDate}&orderby=timedesc`;
+    console.log("API URL:", apiUrl);
     
     try {
         const response = await fetch(apiUrl);
