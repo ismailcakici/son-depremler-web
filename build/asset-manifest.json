@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/son-depremler-web/static/css/main.153e7c9d.css",
+    "main.js": "/son-depremler-web/static/js/main.9d4812e7.js",
+    "index.html": "/son-depremler-web/index.html",
+    "main.153e7c9d.css.map": "/son-depremler-web/static/css/main.153e7c9d.css.map",
+    "main.9d4812e7.js.map": "/son-depremler-web/static/js/main.9d4812e7.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.153e7c9d.css",
+    "static/js/main.9d4812e7.js"
+  ]
+}
