@@ -5,6 +5,7 @@ import Map from "../../components/map/Map";
 import QuakeList from "../../components/quakeList/quakeList";
 import { useQuakeContext } from "../../context/AppLevelContext";
 import { Quake } from "../../types/Quake/Quake";
+import { normalizeText } from "../../utils/normalize/normalizeText";
 
 const CityDetail: React.FC = () => {
   const { cityId } = useParams<{ cityId: string }>();
@@ -18,8 +19,13 @@ const CityDetail: React.FC = () => {
       </div>
     );
   }
+
   const filteredQuakes: Quake[] = quakes.filter((quake) => {
-    return quake.location_properties.epiCenter.cityCode === city?.id;
+    const cityName = city?.name ? normalizeText(city.name) : "";
+    const quakeTitle = quake.title ? normalizeText(quake.title) : "";
+  
+    const match = quakeTitle.includes(cityName);
+    return match;
   });
 
   return (

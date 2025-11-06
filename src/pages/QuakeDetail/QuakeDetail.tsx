@@ -39,7 +39,7 @@ const QuakeDetail: React.FC = () => {
             <thead>
               <tr>
                 <th>Tarih</th>
-                <th>Şehir</th>
+                <th>Yer</th>
                 <th>Büyüklük</th>
                 <th>Derinlik</th>
               </tr>
@@ -47,7 +47,7 @@ const QuakeDetail: React.FC = () => {
             <tbody>
               <tr>
                 <td>{new Date(quake.date).toLocaleString()}</td>
-                <td>{quake.location_properties.epiCenter.name}</td>
+                <td>{quake.title}</td>
                 <td> {quake.magnitude}</td>
                 <td> {quake.depth}km</td>
               </tr>
